@@ -30,6 +30,8 @@ class  Marketcap extends React.Component  {
   } 
   
   handleOnclick =(text) => {
+    this.setState({
+        text:text});
     window.location.assign('http://localhost:3000/marketcap/'+ text);
   }
   
@@ -56,6 +58,7 @@ class  Marketcap extends React.Component  {
         dataSource={this.props.data} //replace with coinform filter by coin item
         rowKey = {this.props.data.owner}
       />
+      <Detailmarketcap text = {this.state.text} />
       
       </div>
     );
