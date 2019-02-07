@@ -29,3 +29,5 @@ const mapStateToProps = state => {
 
 
 export default Detailmarketcap;
+
+https://www.sitepoint.com/react-router-v4-complete-guide/
