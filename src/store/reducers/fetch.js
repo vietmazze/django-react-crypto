@@ -137,3 +137,28 @@ export const PorfolioReducer = (state=initialState4, action) => {
             return state;
     }
 }
+//////////////////////////////////////////////////////////////////
+const fetchBtcDataSuccess = (state,action) => {
+    return updateObject(state,{
+        data: action.data,
+        error:null
+    } )
+}
+
+const fetchBtcDataFailure = (state,action) => {
+    return updateObject(state,{
+        error: action.error
+    } )
+}
+
+
+
+export const BtcDataReducer = (state=initialState6, action) => {
+    switch(action.type) {
+        // case actionTypes.BTCDATA_START: return fetchBtcDataStart(state, action);
+        case actionTypes.BTCDATA_SUCCESS: return fetchBtcDataSuccess(state, action);
+        case actionTypes.BTCDATA_FAILURE: return fetchBtcDataFailure(state, action);
+        default: 
+            return state;
+    }
+}
